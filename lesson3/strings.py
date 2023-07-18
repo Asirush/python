@@ -164,9 +164,9 @@ def main() -> None:
 #    remove_string()
 #    index_string()
 #    custom_format_string()
-#    string_methods()
+    string_methods()
 #    string_to_types()
-    best_practices()
+#    best_practices()
     
 if __name__=="__main__":
     main()    
