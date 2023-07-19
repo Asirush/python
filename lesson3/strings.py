@@ -155,8 +155,10 @@ def best_practices() -> None:
     
     return None
 
+
+
 def main() -> None:
-#    qotation_marks()
+    qotation_marks()
 #    string_max_size()
 #    line_breaks()
 #    concationation()
@@ -164,7 +166,7 @@ def main() -> None:
 #    remove_string()
 #    index_string()
 #    custom_format_string()
-    string_methods()
+#    string_methods()
 #    string_to_types()
 #    best_practices()
     
