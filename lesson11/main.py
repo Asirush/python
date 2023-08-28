@@ -16,7 +16,7 @@ def delete_country(countries_list: set, country_name: str) -> set:
     
 def search_element(countries_list: set, search: str) -> set:
     try:
-        matching_countries = [country for country in countries if search in country]
+        matching_countries = [country for country in countries_list if search in country]
         return matching_countries
     except ValueError:
         return False
@@ -40,27 +40,31 @@ def main_menu(countries: set):
             case 2: 
                 os.system('clear')
                 print("Enter country name")
-                name = input() 
+                countname = input() 
+                print("Enter capital name")
+                capname = input()
+                name = (countname, capname)
                 print(add_country(countries, name))
             case 3: 
                 os.system('clear')
                 print("Enter country name")
-                name = input() 
+                countname = input() 
+                name = (countname, capname)
                 print(delete_country(countries, name))
             case 4:
                 os.system('clear')
                 print("Enter searching data")
-                name = input() 
-                print(delete_country(countries, name))
+                countname = input() 
+                name = (countname, capname)
+                print(search_element(countries, name))
             case 5:
                 os.system('clear')
                 print("Enter country name")
-                name = input() 
-                print(delete_country(countries, name))
+                countname = input() 
+                name = (countname, capname)
+                print(check_country_exists(countries, name))
             case 6:
                 break
-
-
 
 if "__main__" == __name__:
     countries = set()
