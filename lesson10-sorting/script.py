@@ -1,5 +1,13 @@
+import time
+import timeit
 import random
 from sorts import *
+
+def function_to_compare(function: callable, arr: list) -> float:
+    start_time = time.time()
+    arr_copy = function(arr)
+    end_time = time.time()
+    return end_time - start_time, arr_copy
 
 def generate_arr(size: int) -> list:
     array = []
@@ -33,15 +41,16 @@ if "__main__" == __name__:
     
     print("shell_sort")
     show_before_sort(arr1, ARRSIZE)
-    shell_sort(arr1)
+    print("execution time: " + function_to_compare(shell_sort(arr1)))
     show_after_sort(arr1, ARRSIZE)
 
     print("heap_sort")
     show_before_sort(arr2, ARRSIZE)
-    heap_sort(arr2)
+    print("execution time: " + function_to_compare(heap_sort(arr2)))
     show_after_sort(arr2, ARRSIZE)
 
     print("quick_sort")
     show_before_sort(arr3, ARRSIZE)
+    print("execution time: " + function_to_compare(quick_sort(arr3)))
     answer = quick_sort(arr3)
     show_after_sort(answer, ARRSIZE)
