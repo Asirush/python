@@ -1,3 +1,10 @@
+class Lesson:
+    def __init__(self, name: str) -> None:
+        self.name = name
+
+    def __str__(self):
+        return self.name
+
 class Person:
     def __init__(self, name: str, age: int) -> None:
         self.name = name
@@ -11,9 +18,18 @@ class Student(Person):
         self.name = name
         self.age = age
         self.id = id
+
+    def __init__(self, name: str, age: int, id: str, lesson: Lesson) -> None:
+        self.name = name
+        self.age = age
+        self.id = id
+        self.lessons.append(lesson)
+
+    def addLesson(self, lesson: Lesson):
+        self.lessons.append(lesson)
     
     def info(self):
-        return f'"{self.name}", {self.age}, "{self.id}"'
+        result = f'"{self.name}", {self.age}, "{self.id}", {self.lessons}'
 
 class Teacher(Person):
     def __init__(self, name: str, age: int, lesson: str) -> None:
